@@ -7,5 +7,15 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'Samantha_Toye_Learning_AngularF26';
+  title = 'my-first-project';
 }
+
+function combine<A, B>(project: A, studentId: B){
+  return { ...project, ...studentId };
+}
+//add two new variable with types
+let project = "My first Project";
+let studentId = 0890022;
+//define the variable
+const projectDetails = combine(project, studentId);
+console.log(projectDetails);
