@@ -1,11 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Samantha's First Angular Project</title>
-</head>
-<body>
+<div class="container">
+  <section class="student">
+  <h1>Welcome to {{ title }}</h1>
+    <fieldset>
+      <legend>Student Information</legend>
+      <p><strong>Name:</strong> {{ student1.student }}</p>
+      <p><strong>ID:</strong> {{ student1.id }}</p>
+      <p><strong>Class Code:</strong> {{ student1.MAD }}</p>
+    </fieldset>
 
-</body>
-</html>
+    <fieldset>
+      <legend>Student Information</legend>
+      <p><strong>Name:</strong> {{ student2.student }}</p>
+      <p><strong>ID:</strong> {{ student2.id }}</p>
+      <p><strong>Class Code:</strong> {{ student2.MAD }}</p>
+    </fieldset>
+    <router-outlet></router-outlet>
+  </section>
+</div>
+
 
