@@ -69,6 +69,19 @@ export class AppComponent {
       category: 'Collectible',
       value: 45.00,
       condition: 'Near Mint'
+    },
+    {
+      id: 6,
+      name: 'Michael Jordan Baseball Card',
+      category: 'Trading Card',
+      value: 50.00,
+      condition: 'Near Mint'
+    },
+    {
+      id: 7,
+      name: 'Superman Action Figure',
+      category: 'Figure',
+      value: 89.00
     }
   ];
 }
