@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { collection } from './collection';
+import { collection } from './shared/collection';
 
 //add two new variable with types
 type className = number;

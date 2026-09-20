@@ -1,15 +1,23 @@
 <main style="padding: 20px; font-family: Arial;">
-  <h1> {{ title }}</h1>
-
+  <h1 style="margin: 12px; color: darkblue"> {{ title }}</h1>
   <div style="display: grid; grid-template-columns: auto auto auto auto; margin-top: 20px; gap: 16px; display: flex; flex-wrap: wrap;">
+    <!-- Added an @for loop -->
     @for (item of collection; track item.id){
       <div style="border: 1px solid; border-radius: 8px; padding: 16px; background-color: #b8d8ff;">
-       <h3 style="margin-top: 0px;">{{ item.name }}</h3>
-        <p><strong>Category:</strong> {{ item.category }}</p>
-        <p><strong>Value:</strong>{{ item.value }}</p>
-        <p>
-          <strong>Condition:</strong>{{ item.condition ? item.condition : 'Not Specified' }}
+       <h3 style="margin-top: 0px; color: #222;">{{ item.name }}</h3>
+        <p style="margin: 4px 0;"><strong>Category:</strong> {{ item.category }}</p>
+        <p style="margin: 4px 0;"><strong>Value:</strong>{{ item.value }}</p>
+        <!-- Added an @if to show or hide something -->
+        @if (item.condition){
+        <p style="margin: 4px 0; color: #2e7d32;">
+          <strong>Condition:</strong>{{ item.condition }}
         </p>
+        }
+        <!-- Added an @empty block -->
+      </div>
+    }@empty{
+      <div style="grid-column: 1 / -1; padding: 20px; background-color: coral; border: 1px solid #ffeeba; border-radius: 6px;">
+      <p style="margin: 0; color: #856404;">No items found in collection.</p>
       </div>
     }
     <router-outlet></router-outlet>
