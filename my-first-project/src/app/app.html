@@ -1,21 +1,18 @@
-<div class="container">
-  <section class="student">
-  <h1>Welcome to {{ title }}</h1>
-    <fieldset>
-      <legend>Student Information</legend>
-      <p><strong>Name:</strong> {{ student1.student }}</p>
-      <p><strong>ID:</strong> {{ student1.id }}</p>
-      <p><strong>Class Code:</strong> {{ student1.MAD }}</p>
-    </fieldset>
+<main style="padding: 20px; font-family: Arial;">
+  <h1> {{ title }}</h1>
 
-    <fieldset>
-      <legend>Student Information</legend>
-      <p><strong>Name:</strong> {{ student2.student }}</p>
-      <p><strong>ID:</strong> {{ student2.id }}</p>
-      <p><strong>Class Code:</strong> {{ student2.MAD }}</p>
-    </fieldset>
-    <router-outlet></router-outlet>
-  </section>
-</div>
+  <div style="display: grid; grid-template-columns: auto auto auto auto; margin-top: 20px; gap: 16px; display: flex; flex-wrap: wrap;">
+    @for (item of collection; track item.id){
+      <div style="border: 1px solid; border-radius: 8px; padding: 16px; background-color: #b8d8ff;">
+       <h3 style="margin-top: 0px;">{{ item.name }}</h3>
+        <p><strong>Category:</strong> {{ item.category }}</p>
+        <p><strong>Value:</strong>{{ item.value }}</p>
+        <p>
+          <strong>Condition:</strong>{{ item.condition ? item.condition : 'Not Specified' }}
+        </p>
+      </div>
+    }
+  </div>
+</main>
 
 

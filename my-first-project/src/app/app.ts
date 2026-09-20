@@ -34,7 +34,7 @@ export class AppComponent {
     id: '0890011',
     MAD: 308003
   };
-
+//create array with 6 instances of my collection
   collection: collection[] = [
     {
       id: 1,
