@@ -1,0 +1,25 @@
+<div class="collection-card">
+  <h2>{{ item().name }}</h2>
+
+  <!-- Add in @switch case include a @default, header tag (h1, h2, h3) and an @if @else -->
+  @switch (item().category) {
+    @case ('Trading Card') {
+      <span class="badge card-badge">Trading Card</span>
+    }
+    @case ('Figure') {
+      <span class="badge figure-badge">Figure</span>
+    }
+    @case ('Collectible') {
+      <span class="badge collectible-badge">Collectible</span>
+    }
+    @default {
+      <span class="badge default-badge">Unknown</span>
+    }
+  }
+<p><strong>Value:</strong> ${{ item().value }}</p>
+  @if (item().condition){
+    <p><strong>Condition:</strong> {{ item().condition }}</p>
+  } @else {
+    <p><strong>Condition:</strong> Not Specified</p>
+  }
+</div>
