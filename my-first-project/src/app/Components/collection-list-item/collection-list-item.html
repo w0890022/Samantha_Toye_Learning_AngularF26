@@ -1,4 +1,5 @@
-<div class="collection-card">
+<div class="collection-card" (click)="toggle()">
+  <!-- Added the click toggle() to the html -->
   <h2>{{ item().name }}</h2>
 
   <!-- Add in @switch case include a @default, header tag (h1, h2, h3) and an @if @else -->
@@ -16,10 +17,14 @@
       <span class="badge default-badge">Unknown</span>
     }
   }
+
+  <!-- an @if reveals the details when expanded is true -->
+  @if (expanded) {
 <p><strong>Value:</strong> ${{ item().value }}</p>
   @if (item().condition){
     <p><strong>Condition:</strong> {{ item().condition }}</p>
   } @else {
     <p><strong>Condition:</strong> Not Specified</p>
+  }
   }
 </div>
