@@ -1,0 +1,25 @@
+/**********************************************************
+Samantha Toye      ID: 0890022           Class: MAD307-001
+DATE MODIFIED: 09/28/2026
+*********************************************************/
+.list-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  app-collection-list-item {
+    display: block;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .list-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 600px){
+  .list-container {
+    grid-template-columns: 1fr;
+  }
+}

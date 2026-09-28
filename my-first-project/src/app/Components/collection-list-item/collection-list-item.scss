@@ -1,7 +1,28 @@
+/**********************************************************
+Samantha Toye      ID: 0890022           Class: MAD307-001
+DATE MODIFIED: 09/28/2026
+*********************************************************/
 .collection-card {
   border: 2px solid #365773;
-  background-color: darkgrey;
+  background-color: lightgrey;
   border-radius: 8px;
   padding: 16px;
   margin-bottom: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.85);
+  }
 }
+.badge{
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
