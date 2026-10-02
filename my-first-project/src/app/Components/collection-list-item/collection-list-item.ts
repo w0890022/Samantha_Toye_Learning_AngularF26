@@ -1,5 +1,6 @@
 import { Component, input, output } from '@angular/core';
-import { collection, collectionEvent } from '../../shared/collection';
+import { collection } from '../../shared/collection';
+import { collectionEv } from '../../shared/collectionEv';
 
 @Component({
   imports: [],
@@ -12,7 +13,7 @@ export class CollectionListItem {
   item = input.required<collection>();
 
   //output() from event goes here from collectionEvent
-  itemClicked = output<collectionEvent>();
+  itemClicked = output<collectionEv>();
   expanded = false;
 
   toggle(): void {

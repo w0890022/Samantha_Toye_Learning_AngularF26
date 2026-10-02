@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "create": "ng g c Components/collection-list-item",
-    "generate": "ng g c Components/collection-list",
+    "generate": "ng g s services/collectionServ",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

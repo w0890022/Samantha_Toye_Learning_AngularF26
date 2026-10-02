@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { collection, collectionEvent } from '../../shared/collection';
+import { collection } from '../../shared/collection';
 import { CollectionListItem} from '../collection-list-item/collection-list-item';
+import { collectionEv } from '../../shared/collectionEv';
 
 @Component({
   imports: [CollectionListItem],
@@ -40,7 +41,7 @@ export class CollectionList {
     }
   ];
   //listen for the collectionEvent emitted and handle it
-  handleItemClick(event: collectionEvent): void {
+  handleItemClick(event: collectionEv): void {
     console.log(`Collectible ID ${event.id} action: ${event.action}`);
   }
 }
