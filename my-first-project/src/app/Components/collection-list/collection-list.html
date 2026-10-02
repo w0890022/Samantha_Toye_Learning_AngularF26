@@ -1,6 +1,6 @@
 <div class="list-container">
   <!--Use a @for and include the track expression, and an @empty block -->
-  @for (c of collectible; track c.id){
+  @for (c of collectible(); track c.id){
     <!--Added the itemClicked event into card -->
     <app-collection-list-item [item]="c" (itemClicked)="handleItemClick($event)">
     </app-collection-list-item>
