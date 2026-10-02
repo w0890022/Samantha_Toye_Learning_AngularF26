@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { collection } from '../../shared/collection';
 import { CollectionListItem} from '../collection-list-item/collection-list-item';
 import { collectionEv } from '../../shared/collectionEv';
 import { CollectionServ } from '../../services/collection-serv';
@@ -14,7 +13,7 @@ import { CollectionServ } from '../../services/collection-serv';
 export class CollectionList {
   private CollectionServ = inject(CollectionServ);
 
-  CollectionList = this.CollectionServ.CollectionList;
+  collectible = this.CollectionServ.CollectionList;
   //listen for the collectionEvent emitted and handle it
   handleItemClick(event: collectionEv): void {
     console.log(`Collectible ID ${event.id} action: ${event.action}`);
