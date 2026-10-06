@@ -32,19 +32,27 @@ export class CollectionServ {
     },
   ]);
   CollectionList = this.Collection.asReadonly();
-
-  //this is the computed signal
+  //this is the computed signal (computed reads value in read only)
   collectionCount = computed(() => this.CollectionList().length);
 
-  //constructor does an effect when the signal changes
+  //add a second computed off the first signal used count items from collection
+  collectionMatch = computed(() => {
+    const count = this.collectionCount();
+    return `${count} ${count === 1 ? 'item listed' : 'items listed'}`;
+  })
+  //constructor does an effect when the signal changes (effect runs when signal reads change)
   constructor() {
     effect(() => {
-      console.log('Collection count is now: ', this.collectionCount());
+      console.log('Collection is currently: ', this.collectionMatch());
     });
   }
 
   //this is the method using update that adds a new item
   addCollection(c: collection) {
-    this.Collection.update(list => [...list, c]);
+    this.Collection.update((list) => [...list, c]);
+}
+    //this part is in progress from 1. Remove an item all the way through signal
+removeCollection(id: string | number) {
+  this.Collection.update((list) => list.filter((c) => c.id !== id));
   }
 }

@@ -5,5 +5,5 @@
 
 export interface collectionEv {
   id: string | number;
-  action: 'sold' | 'available';
+  action: 'sold' | 'available' | 'remove';
 }

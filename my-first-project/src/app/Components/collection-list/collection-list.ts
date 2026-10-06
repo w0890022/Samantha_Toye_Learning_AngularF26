@@ -17,5 +17,8 @@ export class CollectionList {
   //listen for the collectionEvent emitted and handle it
   handleItemClick(event: collectionEv): void {
     console.log(`Collectible ID ${event.id} action: ${event.action}`);
+
+    //add the event to list component from service for removing
+    this.CollectionServ.removeCollection(event.id);
   }
 }

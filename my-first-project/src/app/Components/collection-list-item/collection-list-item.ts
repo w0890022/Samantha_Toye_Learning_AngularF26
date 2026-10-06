@@ -18,12 +18,13 @@ export class CollectionListItem {
 
   toggle(): void {
     this.expanded = !this.expanded;
-
-    //emit an event carrying the item id and action taken
+  }
+//I did an method to create the remove from list
+  protected remove(event: PointerEvent): void {
+    event.stopPropagation();
     this.itemClicked.emit({
       id: this.item().id,
-      action: 'available'
+      action: 'remove'
     });
   }
-
 }
